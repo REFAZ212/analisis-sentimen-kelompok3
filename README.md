@@ -288,62 +288,7 @@ New-Item -ItemType Directory -Force models | Out-Null
 
 ---
 
-## 13. Langkah 10 — Push ke GitHub Milik Sendiri
-
-
-### 13.1 Buat repository baru
-
-1. Buka GitHub -> **New repository**.
-2. Beri nama (mis. `Sentiment_Analysis_Disney`).
-3. **Jangan** centang "Add a README/.gitignore/license" (biarkan kosong) agar tidak konflik.
-4. Salin URL repo, mis. `https://github.com/<username>/Sentiment_Analysis_Disney.git`.
-
-### 13.2 Ganti remote `origin`
-
-Di root proyek:
-
-```powershell
-git remote -v
-git remote set-url origin https://github.com/<username>/Sentiment_Analysis_Disney.git
-git remote -v
-```
-
-**Alternatif (menyimpan repo dosen sebagai `upstream`):**
-
-```powershell
-git remote rename origin upstream
-git remote add origin https://github.com/<username>/Sentiment_Analysis_Disney.git
-```
-
-### 13.3 Commit & push
-
-Pastikan `.venv/` tidak ikut ter-commit (sudah diatur di `.gitignore`):
-
-```powershell
-git status
-git add .
-git commit -m "Analisis sentimen Disney+ (perubahan dari studi kasus OVO)"
-git push -u origin main
-```
-
-### 13.4 Autentikasi
-
-- **GitHub CLI (disarankan):**
-  ```powershell
-  gh auth login
-  ```
-- **HTTPS biasa:** gunakan **Personal Access Token (PAT)** sebagai password, bukan password akun.
-  Buat di GitHub -> Settings -> Developer settings -> Personal access tokens.
-- **SSH:** tambahkan SSH key ke GitHub, lalu pakai URL `git@github.com:<username>/<repo>.git`.
-
-### 13.5 Jika memakai fork
-
-Buka repo dosen di GitHub -> tombol **Fork** -> clone hasil fork -> push perubahan ke fork Anda.
-Cara ini otomatis menyimpan hubungan ke repo asal.
-
----
-
-## 14. Troubleshooting
+## 13. Troubleshooting
 
 | Masalah | Penyebab | Solusi |
 |---------|----------|--------|
@@ -358,7 +303,7 @@ Cara ini otomatis menyimpan hubungan ke repo asal.
 
 ---
 
-## 15. Catatan Reproducibility
+## 14. Catatan Reproducibility
 
 - Selalu aktifkan `.venv` sebelum menjalankan notebook.
 - Gunakan path relatif, hindari path absolut seperti `D:/KULIAH/...` agar bisa dijalankan di komputer lain.
