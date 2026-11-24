@@ -1,0 +1,21 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Model / artefak besar
+models/
+*.h5
+model_w2v.model*
+
+# OS
+.DS_Store
+Thumbs.db
